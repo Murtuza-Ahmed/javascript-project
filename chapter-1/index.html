@@ -10,40 +10,44 @@
 
 <body>
     <div class="container">
-        <div class="display-input">
-            <input type="display" id="number" placeholder="0.00">
-        </div>
-        <div class="button">
-            <button class="change-btn">(</button>
-            <button class="change-btn">)</button>
-            <button class="change-btn">%</button>
-            <button class="change-btn">AC</button>
-            <br>
-            <button>7</button>
-            <button>8</button>
-            <button>9</button>
-            <button class="change-btn">/</button>
-            <br>
-            <button>4</button>
-            <button>5</button>
-            <button>6</button>
-            <button class="change-btn">*</button>
-            <br>
-            <button>1</button>
-            <button>2</button>
-            <button>3</button>
-            <button class="change-btn">-</button>
-            <br>
-            <button>0</button>
-            <button class="bold">.</button>
-            <button class="blue">=</button>
-            <button class="change-btn">+</button>
+        <div class="calculator">
+            <input type="text" name="display" placeholder="0.00" id="number">
+            <div>
+                <button class="change-btn">(</button>
+                <button class="change-btn">)</button>
+                <button class="change-btn">%</button>
+                <button class="change-btn">CE</button>
+            </div>
+            <div>
+                <button class="btn">7</button>
+                <button class="btn">8</button>
+                <button class="btn">9</button>
+                <button class="change-btn">/</button>
+            </div>
+            <div>
+                <button class="btn">4</button>
+                <button class="btn">5</button>
+                <button class="btn">6</button>
+                <button class="change-btn">*</button>
+            </div>
+            <div>
+                <button class="btn">1</button>
+                <button class="btn">2</button>
+                <button class="btn">3</button>
+                <button class="change-btn">-</button>
+            </div>
+            <div>
+                <button class="change-btn">0</button>
+                <button class="change-btn">.</button>
+                <button class="btn-blue">=</button>
+                <button class="change-btn">+</button>
+            </div>
         </div>
     </div>
 
 
     <!-- SCRIPT FILE -->
-    <script src="./assets/javascript/app.js" type="module"></script>
+    <script src="./assets/javascript/app.js"></script>
 </body>
 
 </html>
