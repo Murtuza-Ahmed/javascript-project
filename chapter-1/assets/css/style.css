@@ -50,7 +50,8 @@ body {
 button {
     cursor: pointer;
     margin: 1rem;
-    width: 50px;
+    width: 60px;
+    height: 50px;
     font-weight: bold;
 }
 
@@ -73,4 +74,8 @@ button {
     border-style: none;
     border-radius: 0.5rem;
     background-color: #b5d0e0;
+}
+
+.calculate {
+    font-size: 1.10rem;
 }
