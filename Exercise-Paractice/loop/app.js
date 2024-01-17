@@ -105,3 +105,20 @@ for (let arr of emptyArray) {
     console.log(arr);
 }
 console.log(emptyArray);
+
+// EXERCISE 5.7
+let simpleObj = {
+    car: "civic",
+    color: "black",
+    model: 2012,
+    company: "toyota"
+};
+for (let obj in simpleObj) {
+    console.log("Key", obj, "Value", simpleObj);
+}
+let simpleArr = ["car", "civic", "color", "black", "model", "2012", "company", "toyota"];
+for (let arr in simpleArr) {
+    console.log(arr, simpleArr[arr])
+}
+
+// EXERCISE 5.8
