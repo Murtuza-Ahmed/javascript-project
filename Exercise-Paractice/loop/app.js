@@ -3,6 +3,15 @@
 //     console.log(i);
 //     i++;
 // }
+outer: for (let i = 1; i < 5; i++) {
+    for (let j = 1; j < 5; j++) {
+        console.log(`I: ${i} J:${j}`)
+        if (i === 2 && j === 2) {
+            break outer;
+        }
+    }
+}
+
 
 // EXERCISE 5.1
 // let max = 10;
@@ -138,3 +147,5 @@ for (let count = 1; count <= 10; count++) {
     output += count;
 }
 console.log(output)
+
+// Chapter project Math multiplication table
