@@ -56,16 +56,35 @@ console.log(myWork);
 // }
 // console.table(arrOfArray);
 
-let myTable = [];
-let numRow = 5;
-let numCol = 5;
+// let myTable = [];
+// let numRow = 5;
+// let numCol = 5;
+// let counter = 0;
+// for (let row = 0; row < numRow; row++) {
+//     let tempArray = [];
+//     for (let col = 0; col < numCol; col++) {
+//         counter++;
+//         tempArray.push(counter);
+//         myTable.push(tempArray);
+//     }
+// }
+// console.table(myTable);
+
+// EXERCISE 5.5
+let grid = [];
+let rowCell = 64;
 let counter = 0;
-for (let row = 0; row < numRow; row++) {
-    let tempArray = [];
-    for (let col = 0; col < numCol; col++) {
-        counter++;
-        tempArray.push(counter);
-        myTable.push(tempArray);
+let row = [];
+for (let i = 1; i < rowCell; i++) {
+    //if (counter % 8 === 0) {
+    if (i) {
+        grid.push(i);
+
     }
+    //}
+    counter + 1;
+    let tempArray;
+    row.push(tempArray);
 }
-console.table(myTable);
+grid.push(row);
+console.table(grid)
