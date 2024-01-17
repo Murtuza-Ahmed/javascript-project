@@ -75,16 +75,20 @@ let grid = [];
 let rowCell = 64;
 let counter = 0;
 let row = [];
-for (let i = 1; i < rowCell; i++) {
-    //if (counter % 8 === 0) {
-    if (i) {
-        grid.push(i);
-
+for (let i = 1; i <= rowCell; i++) {
+    if (counter % 8 === 0) {
+        if (row !== undefined) {
+            grid.push(row);
+        }
+        if (counter % 8 === 0) {
+            row = []
+        }
     }
-    //}
-    counter + 1;
-    let tempArray;
+    counter++;
+    let tempArray = counter;
     row.push(tempArray);
+    if (counter === 8) {
+        grid.push(row);
+    }
 }
-grid.push(row);
 console.table(grid)
