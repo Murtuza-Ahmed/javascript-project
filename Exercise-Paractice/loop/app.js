@@ -24,14 +24,24 @@
 // }
 
 // EXERCISE 5.2
-let counter = 0;
-let step = 1;
-counter = counter + step;
-counter += step; // Short Hand
-// console.log(counter)
-do {
-    console.log(counter);
-    counter++;
-} while (counter <= 10)
+// let counter = 0;
+// let step = 1;
+// counter = counter + step;
+// counter += step; // Short Hand
+// // console.log(counter)
+// do {
+//     console.log(counter);
+//     counter++;
+// } while (counter <= 10)
 
 // EXERCISE 5.3
+var myWork = [];
+for (var i = 1; i <= 10; i++) {
+    var updateStatus = i % 2 === 1 ? false : true;
+    var obj = {
+        name: `lesson:${i}`,
+        status: updateStatus
+    }
+    myWork.push(obj);
+}
+console.log(myWork);
