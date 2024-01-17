@@ -92,3 +92,16 @@ for (let i = 1; i <= rowCell; i++) {
     }
 }
 console.table(grid)
+
+// EXERCISE 5.6
+let emptyArray = [];
+for (let i = 1; i <= 10; i++) {
+    emptyArray.push(i + 1);
+}
+for (let j = 1; j < emptyArray.length; j++) {
+    console.log(`MyArray: ${emptyArray[j]}`);
+}
+for (let arr of emptyArray) {
+    console.log(arr);
+}
+console.log(emptyArray);
