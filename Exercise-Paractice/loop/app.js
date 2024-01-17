@@ -45,3 +45,27 @@ for (var i = 1; i <= 10; i++) {
     myWork.push(obj);
 }
 console.log(myWork);
+
+// EXERCISE 5.4
+// let arrOfArray = [];
+// for (let i = 0; i < 5; i++) {
+//     arrOfArray.push([]);
+//     for (let j = 0; j < 10; j++) {
+//         arrOfArray[i].push(j);
+//     }
+// }
+// console.table(arrOfArray);
+
+let myTable = [];
+let numRow = 5;
+let numCol = 5;
+let counter = 0;
+for (let row = 0; row < numRow; row++) {
+    let tempArray = [];
+    for (let col = 0; col < numCol; col++) {
+        counter++;
+        tempArray.push(counter);
+        myTable.push(tempArray);
+    }
+}
+console.table(myTable);
