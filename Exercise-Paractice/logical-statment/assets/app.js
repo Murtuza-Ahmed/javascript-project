@@ -106,29 +106,52 @@ console.log(`Answer: ${answer} Response: ${response}`);
 // console.dir(finalFindHere);
 
 // Friend checker game
-let userFriend = prompt("Enter the Friend Name");
-friendLower = userFriend.toLowerCase();
-let friendIn = "";
-switch (friendLower) {
-    case "murtuza":
-        friendIn = "Murtuza-He";
-        break;
-    case "hamza":
-        friendIn = "Hamza-He";
-        break;
-    case "umer":
-        friendIn = "Umer-He";
-        break;
-    case "zubair":
-        friendIn = "Zubair-He";
-        break;
-    case "talha":
-    case "owais":
-        friendIn = "Friend-He";
-        break;
-    default:
-        friendIn = "No friend found";
-        break;
+// let userFriend = prompt("Enter the Friend Name");
+// friendLower = userFriend.toLowerCase();
+// let friendIn = "";
+// switch (friendLower) {
+//     case "murtuza":
+//         friendIn = "Murtuza-He";
+//         break;
+//     case "hamza":
+//         friendIn = "Hamza-He";
+//         break;
+//     case "umer":
+//         friendIn = "Umer-He";
+//         break;
+//     case "zubair":
+//         friendIn = "Zubair-He";
+//         break;
+//     case "talha":
+//     case "owais":
+//         friendIn = "Friend-He";
+//         break;
+//     default:
+//         friendIn = "No friend found";
+//         break;
+// }
+// let finalFriend = `Apka Dost ${friendIn}`
+// console.log(finalFriend);
+
+// Rock Paper Scissors game
+let gameArray = ["paper", "rock", "scissors"];
+// let playerSelectGame = Math.floor(Math.random() * gameArray.length);
+// gamePlayer = gameArray[playerSelectGame];
+let gamePlayer = prompt("Enter The rock, paper, scissors");
+let computerSelectGame = Math.floor(Math.random() * gameArray.length);
+computerPlayer = gameArray[computerSelectGame];
+let gameMessage;
+console.log(`Player: ${gamePlayer}`);
+console.log(`Compter: ${computerPlayer}`);
+if (gamePlayer === computerPlayer) {
+    gameMessage = "It's Tai";
+} else if (gamePlayer === "rock" && computerPlayer === "scissors") {
+    gameMessage = "Compter Win";
+} else if (gamePlayer === "paper" && computerPlayer === "rock") {
+    gameMessage = "Computer Win";
+} else if (gamePlayer === "scissors" && computerPlayer === "paper") {
+    gameMessage = "Computer Win";
+} else {
+    gameMessage = "Player Win";
 }
-let finalFriend = `Apka Dost ${friendIn}`
-console.log(finalFriend);
+console.log(gameMessage)
