@@ -134,10 +134,13 @@ console.log(`Answer: ${answer} Response: ${response}`);
 // console.log(finalFriend);
 
 // Rock Paper Scissors game
+let rock = "rock";
+let paper = "paper";
+let scissors = "scissors";
 let gameArray = ["paper", "rock", "scissors"];
 // let playerSelectGame = Math.floor(Math.random() * gameArray.length);
 // gamePlayer = gameArray[playerSelectGame];
-let gamePlayer = prompt("Enter The rock, paper, scissors");
+let gamePlayer = prompt(`Enter The: ${rock} ${paper} ${scissors}`);
 let computerSelectGame = Math.floor(Math.random() * gameArray.length);
 computerPlayer = gameArray[computerSelectGame];
 let gameMessage;
