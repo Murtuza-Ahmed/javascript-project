@@ -122,3 +122,19 @@ for (let arr in simpleArr) {
 }
 
 // EXERCISE 5.8
+let output = "";
+let skipNumber = 5;
+for (let i = 1; i <= 10; i++) {
+    if (i === skipNumber) {
+        continue;
+    }
+    output += i;
+}
+console.log(output)
+for (let count = 1; count <= 10; count++) {
+    if (count === skipNumber) {
+        break;
+    }
+    output += count;
+}
+console.log(output)
