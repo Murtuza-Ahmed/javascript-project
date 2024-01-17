@@ -5,20 +5,33 @@
 // }
 
 // EXERCISE 5.1
-let max = 10;
-let genrateNumber = Math.floor(Math.random() * max) + 1;
-console.log(genrateNumber)
-let bool = false;
-while (!bool) {
-    let user = +prompt("Enter the Number 1 to 10");
-    if (user === genrateNumber) {
-        console.log("Match Number");
-        bool = true;
-    } else if (user < genrateNumber) {
-        console.log("Your Number Small");
-    } else if (user > genrateNumber) {
-        console.log("Your Number Big")
-    } else {
-        console.log("Number Not Same! Try Again");
-    }
-}
+// let max = 10;
+// let genrateNumber = Math.floor(Math.random() * max) + 1;
+// console.log(genrateNumber)
+// let bool = false;
+// while (!bool) {
+//     let user = +prompt("Enter the Number 1 to 10");
+//     if (user === genrateNumber) {
+//         console.log("Match Number");
+//         bool = true;
+//     } else if (user < genrateNumber) {
+//         console.log("Your Number Small");
+//     } else if (user > genrateNumber) {
+//         console.log("Your Number Big")
+//     } else {
+//         console.log("Number Not Same! Try Again");
+//     }
+// }
+
+// EXERCISE 5.2
+let counter = 0;
+let step = 1;
+counter = counter + step;
+counter += step; // Short Hand
+// console.log(counter)
+do {
+    console.log(counter);
+    counter++;
+} while (counter <= 10)
+
+// EXERCISE 5.3
