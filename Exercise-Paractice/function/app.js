@@ -21,7 +21,7 @@ console.log(numCre(40, 10));
 // EXERCISE 6.3
 let calcuNum = +prompt("Enter the NUMBER");
 let calcuNum1 = +prompt("Enter the NUMBER");
-let operator = "+" + "-" + "*" + "/";
+let operator = "+ | - | * | /";
 let multiple = prompt(`Enter the ${operator}`);
 function calculator(num, num1, multiplication) {
     if (multiplication === "+") {
