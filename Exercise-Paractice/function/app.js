@@ -69,3 +69,18 @@ let anonymusFun = function (paraValue) {
     value = paraValue
     console.log(value);
 }
+
+// EXERCISE 6.6
+function factorial(value) {
+    if (value === 0) {
+        return 1;
+    } else {
+        return value * factorial(value - 1);
+    }
+}
+function repeatFactorial() {
+    for (let g = 0; g <= 5; g++) {
+        console.log(`Factorial: ${g} Factoral: ${factorial(g)}`);
+    }
+}
+repeatFactorial();
