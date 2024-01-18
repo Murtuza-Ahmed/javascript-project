@@ -149,3 +149,13 @@ for (let count = 1; count <= 10; count++) {
 console.log(output)
 
 // Chapter project Math multiplication table
+let multiplicationArray = [];
+let valueNum = 5;
+for (let i = 1; i <= valueNum; i++) {
+    let rowArray = [];
+    for (let j = 1; j <= valueNum; j++) {
+        rowArray.push(i * j);
+    }
+    multiplicationArray.push(rowArray);
+}
+console.table(multiplicationArray);
