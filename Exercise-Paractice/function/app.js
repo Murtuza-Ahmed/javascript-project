@@ -19,22 +19,35 @@ console.log(numCre(40, 10));
 // friendName();
 
 // EXERCISE 6.3
-let calcuNum = +prompt("Enter the NUMBER");
-let calcuNum1 = +prompt("Enter the NUMBER");
-let operator = "+ | - | * | /";
-let multiple = prompt(`Enter the ${operator}`);
-function calculator(num, num1, multiplication) {
-    if (multiplication === "+") {
-        return num + num1;
-    } else if (multiplication === "-") {
-        return num - num1;
-    } else if (multiplication === "*") {
-        return num * num1;
-    } else if (multiplication === "/") {
-        return num / num1;
-    } else {
-        return num + num1;
+// let calcuNum = +prompt("Enter the NUMBER");
+// let calcuNum1 = +prompt("Enter the NUMBER");
+// let operator = "+ | - | * | /";
+// let multiple = prompt(`Enter the ${operator}`);
+// function calculator(num, num1, multiplication) {
+//     if (multiplication === "+") {
+//         return num + num1;
+//     } else if (multiplication === "-") {
+//         return num - num1;
+//     } else if (multiplication === "*") {
+//         return num * num1;
+//     } else if (multiplication === "/") {
+//         return num / num1;
+//     } else {
+//         return num + num1;
+//     }
+// }
+// let finalCal = calculator(calcuNum, calcuNum1, multiple);
+// console.log(finalCal);
+
+// EXERCISE 6.4
+let calArr = [];
+for (let count = 1; count <= 10; count++) {
+    let val = count * 5;
+    let val1 = count * count;
+    function add(a, b) {
+        return a + b;
     }
+    let result = add(val, val1);
+    calArr.push(result);
 }
-let finalCal = calculator(calcuNum, calcuNum1, multiple);
-console.log(finalCal);
+console.log(calArr);
