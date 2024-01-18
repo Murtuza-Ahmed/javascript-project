@@ -51,3 +51,21 @@ for (let count = 1; count <= 10; count++) {
     calArr.push(result);
 }
 console.log(calArr);
+
+// EXERCISE 6.5
+let value = "1000";
+(function () {
+    let value = "New IIFE";
+    console.log(value);
+})();
+
+let result = (function () {
+    let value = "New life IIFE";
+    return value;
+})();
+console.log(result);
+
+let anonymusFun = function (paraValue) {
+    value = paraValue
+    console.log(value);
+}
