@@ -100,3 +100,16 @@ function callFactorial() {
     }
 }
 callFactorial(1);
+
+// EXERCISE 6.7
+let start = 10;
+function nastedCount(para) {
+    if (para < 1) {
+        return;
+    }
+    if (para > 0) {
+        para--;
+        return nastedCount(para);
+    }
+}
+console.log(nastedCount(start));
