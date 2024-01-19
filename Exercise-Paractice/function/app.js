@@ -71,16 +71,32 @@ let anonymusFun = function (paraValue) {
 }
 
 // EXERCISE 6.6
-function factorial(value) {
-    if (value === 0) {
+// function factorial(value) {
+//     if (value === 0) {
+//         return 1;
+//     } else {
+//         return value * factorial(value - 1);
+//     }
+// }
+// function repeatFactorial() {
+//     for (let g = 0; g <= 5; g++) {
+//         console.log(`Factorial: ${g} Factoral: ${factorial(g)}`);
+//     }
+// }
+// repeatFactorial();
+
+// EXERCISE 6.6
+function factorial(val) {
+    if (val === 0) {
         return 1;
     } else {
-        return value * factorial(value - 1);
+        return val * factorial(val - 1);
     }
 }
-function repeatFactorial() {
-    for (let g = 0; g <= 5; g++) {
-        console.log(`Factorial: ${g} Factoral: ${factorial(g)}`);
+// factorial(1);
+function callFactorial() {
+    for (let a = 0; a <= 5; a++) {
+        console.log(`CallFactoral: ${a} Factorial: ${factorial(a)}`);
     }
 }
-repeatFactorial();
+callFactorial(1);
