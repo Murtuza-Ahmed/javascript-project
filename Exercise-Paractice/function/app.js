@@ -104,12 +104,41 @@ callFactorial(1);
 // EXERCISE 6.7
 let start = 10;
 function nastedCount(para) {
-    if (para < 1) {
+    if (para < 10) {
         return;
     }
-    if (para > 0) {
+    if (para > 10) {
         para--;
         return nastedCount(para);
     }
 }
 console.log(nastedCount(start));
+
+// EXERCISE 6.8
+let fun = (e) => {
+    console.log(e);
+};
+fun(5);
+
+// CALL BACK FUNCTION
+function calBack(para) {
+    para();
+    console.log("hello")
+}
+calBack(function () {
+    console.log("world");
+});
+
+function callBack(para) {
+    if (typeof para === "function") {
+        para();
+    } else {
+        console.log("is not function");
+    }
+    console.log("its try")
+}
+callBack(function () {
+    console.log("world")
+});
+
+// Chapter projects
