@@ -142,3 +142,37 @@ callBack(function () {
 });
 
 // Chapter projects
+function count(e) {
+    console.log(e);
+    if (e > 10) {
+        return;
+    }
+    console.log(e);
+    count(e + 1);
+}
+count(1);
+count(8);
+count(3);
+count(6);
+
+// Set timeout order
+const arrowFuncOne = () => {
+    console.log("one")
+}
+const arrowFuncTwo = () => {
+    console.log("two")
+}
+const arrowFuncThree = () => {
+    console.log("three")
+}
+const arrowFuncFour = x => {
+    console.log(x)
+    setTimeout(() => {
+        console.log("five")
+    }, 1000)
+}
+arrowFuncOne();
+arrowFuncTwo();
+arrowFuncThree();
+arrowFuncFour("four");
+setTimeout(arrowFuncOne, 1000);
