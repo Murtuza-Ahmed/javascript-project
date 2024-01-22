@@ -25,3 +25,21 @@ let updateNumber = number.map((value) => {
 })
 let multiplyNumber = number.map(number => number * 2);
 console.log(`OldNumber: ${number}\n UpdateNumber: ${updateNumber}\n MultiplyNumber: ${multiplyNumber}`);
+
+// EXERCISE 8.4 (CAPITALIZE WORD)
+let words = "hello Sheroz I am 24 years Young Boys And i learn fullsTack DIPloma in FUTURE";
+function capitalizeWord(sentanceWord) {
+    let lowerCaseWord = sentanceWord.toLowerCase();
+    let capitalizeWordArray = [];
+    let splitWord = lowerCaseWord.split(" ");
+    splitWord.forEach((w) => {
+        let upperWord = w.slice(0, 1).toUpperCase();
+        let sliceWord = w.slice(1);
+        let combineWord = upperWord + sliceWord;
+        capitalizeWordArray.push(combineWord);
+    });
+    let joinWord = capitalizeWordArray.join(" ");
+    return joinWord;
+}
+let wordInput = capitalizeWord(words);
+console.log(wordInput);
