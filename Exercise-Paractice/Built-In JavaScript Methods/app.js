@@ -8,7 +8,7 @@ const enGit = encodeURIComponent(gitHub);
 const unGit = decodeURIComponent(gitHub);
 console.log(`ENCODE: ${enCodedUrl} \n UNCODE: ${unCodeedUrl} \n GITHUB-ENCODE: ${enGit} \n GITHUB-UNCODE: ${unGit}`);
 
-// EXERCISE 8.2
+// EXERCISE 8.2 (FILTER)
 let friendNameArr = ["murtuza", "raza", "murtuza", "hamza", "hamza", "zubair", "raza", "umer", "sheroz"];
 let filter = friendNameArr.filter((value, index, array) => {
     if (array.indexOf(value) === index) {
@@ -17,3 +17,11 @@ let filter = friendNameArr.filter((value, index, array) => {
 })
 console.log(filter)
 console.log(friendNameArr)
+
+// EXERCISE 8.3 (MAP)
+let number = [1, 2, 3, 4, 5, 6, 7, 8];
+let updateNumber = number.map((value) => {
+    return value * 2;
+})
+let multiplyNumber = number.map(number => number * 2);
+console.log(`OldNumber: ${number}\n UpdateNumber: ${updateNumber}\n MultiplyNumber: ${multiplyNumber}`);
