@@ -43,3 +43,13 @@ function capitalizeWord(sentanceWord) {
 }
 let wordInput = capitalizeWord(words);
 console.log(wordInput);
+
+// EXERCISE 8.5 (REPALCE)
+let stringWord = "I lovE SHEROZ and I JAVAscRIpt LearN";
+let vowel = ["a", "e", "i", "o", "u"]
+let lowerWOrd = stringWord.toLowerCase();
+for (let vowelWordChange of vowel) {
+    let vowelWord = vowelWordChange;
+    let vowelUpdateWord = lowerWOrd.replaceAll(vowelWord, vowel.indexOf());
+    console.log(vowelUpdateWord);
+}
