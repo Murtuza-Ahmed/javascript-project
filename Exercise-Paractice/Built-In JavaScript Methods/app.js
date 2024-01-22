@@ -10,8 +10,8 @@ console.log(`ENCODE: ${enCodedUrl} \n UNCODE: ${unCodeedUrl} \n GITHUB-ENCODE: $
 
 // EXERCISE 8.2
 let friendNameArr = ["murtuza", "raza", "murtuza", "hamza", "hamza", "zubair", "raza", "umer", "sheroz"];
-let filter = friendNameArr.filter((value, index) => {
-    if (value === index) {
+let filter = friendNameArr.filter((value, index, array) => {
+    if (array.indexOf(value) === index) {
         return true;
     }
 })
