@@ -53,3 +53,5 @@ for (let vowelWordChange of vowel) {
     let vowelUpdateWord = lowerWOrd.replaceAll(vowelWord, vowel.indexOf());
     console.log(vowelUpdateWord);
 }
+
+// EXERCISE 8.7 (DATE)
