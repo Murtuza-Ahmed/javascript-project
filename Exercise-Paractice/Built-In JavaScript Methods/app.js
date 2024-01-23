@@ -55,3 +55,11 @@ for (let vowelWordChange of vowel) {
 }
 
 // EXERCISE 8.7 (DATE)
+let date = new Date();
+let monthArray = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+let getDate = date.getDate();
+let getMonth = date.getMonth();
+let getYear = date.getFullYear();
+let monthNumaric = getMonth;
+let monthName = monthArray[monthNumaric];
+console.log("Date: " + getDate + " " + monthName + " " + getYear);
