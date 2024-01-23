@@ -79,3 +79,31 @@ function wordScramble(wordFun) {
 }
 let finalWord = wordScramble(word);
 console.log(finalWord);
+
+// Countdown timer
+let endDate = "2024-12-31T23:59:59";
+function countDown() {
+    let date = new Date(endDate);
+    let currentDate = new Date();
+    let totalSeconds = (date - currentDate) / 1000;
+    let days = Math.floor(totalSeconds / (24 * 60 * 60));
+    let hours = Math.floor((totalSeconds % (24 * 60 * 60)) / 3600);
+    let minutes = Math.floor((totalSeconds % 3600) / 60);
+    let seconds = Math.floor(totalSeconds % 60);
+    return {
+        days,
+        hours,
+        minutes,
+        seconds
+    };
+}
+function update() {
+    let temp = countDown();
+    let output = "";
+    for (let unit in temp) {
+        output += `${unit}: ${temp[unit]} \n`;
+    }
+    console.log(output);
+    setTimeout(update, 1000);
+}
+update();
