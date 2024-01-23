@@ -63,3 +63,19 @@ let getYear = date.getFullYear();
 let monthNumaric = getMonth;
 let monthName = monthArray[monthNumaric];
 console.log("Date: " + getDate + " " + monthName + " " + getYear);
+
+// Chapter projects (Word scrambler)
+let word = "I Love JavaScript & I learn React";
+function wordScramble(wordFun) {
+    let tempWord = "";
+    for (let w = 0; w <= wordFun.length; w++) {
+        let rondamlyWord = Math.floor(Math.random() * wordFun.length);
+        let rondamlyChar = wordFun.charAt(rondamlyWord);
+        tempWord += rondamlyChar;
+        wordFun = wordFun.substring(0, rondamlyWord) + wordFun.substring(rondamlyWord, 1);
+        wordFun = wordFun.substring(0, w + 1) + wordFun.substring(w + 1);
+    }
+    return tempWord;
+}
+let finalWord = wordScramble(word);
+console.log(finalWord);
