@@ -18,3 +18,14 @@ let endCode = encodeURIComponent(her);
 console.log(endCode);
 let diCode = decodeURIComponent(her);
 console.log(diCode);
+
+// EXERCISE 9.3
+let inputClass = document.querySelector("div");
+inputClass.textContent = "The Paractice of DOM";
+inputClass.classList.add("red");
+inputClass.id = "tester";
+inputClass.style.backgroundColor = "red";
+inputClass.style.color = "#fff";
+let documentUrl = document.URL;
+console.log(documentUrl);
+console.log(inputClass)
