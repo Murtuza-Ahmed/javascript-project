@@ -31,22 +31,22 @@ console.log(diCode);
 // console.log(inputClass)
 
 // Chapter project
-let divOutPut = document.getElementsByClassName("output");
-let mainList = {
-    uniqe: document.querySelector("ul")
-}
-mainList.uniqe.id = "list";
-let divTagName = document.querySelectorAll("div");
-let textArray = [];
-let text = divTagName.innerText;
-textArray.push(text);
-for (let i = 0; i <= divTagName.length; i++) {
-    let currentDiv = divTagName[i];
-    currentDiv.id = i + 1;
-    currentDiv.style.color = i % 2 === 0 ? "red" : "blue";
-    console.log(currentDiv)
+// let divOutPut = document.getElementsByClassName("output");
+// let mainList = {
+//     uniqe: document.querySelector("ul")
+// }
+// mainList.uniqe.id = "list";
+// let divTagName = document.querySelectorAll("div");
+// let textArray = [];
+// let text = divTagName.innerText;
+// textArray.push(text);
+// for (let i = 0; i <= divTagName.length; i++) {
+//     let currentDiv = divTagName[i];
+//     currentDiv.id = i + 1;
+//     currentDiv.style.color = i % 2 === 0 ? "red" : "blue";
+//     console.log(currentDiv)
 
-}
+// }
 
 
 
@@ -54,3 +54,14 @@ for (let i = 0; i <= divTagName.length; i++) {
 
 // CHAPTER-(10) DYNAMIC ELEMENT MANIPULATION USING THE DOM
 
+// exercise 10.1
+console.dir(document);
+let bdyDocument = document.body.children;
+let first = bdyDocument[0]
+let nextSibling = first.nextElementSibling;
+let sibling = first.nextSibling;
+console.log(`BodyDocument: ${bdyDocument} \n BodyFirstDocument: ${first}\n BodyNextSibling: ${nextSibling}\n BodySibling: ${sibling}`);
+console.log(bdyDocument)
+console.log(first)
+console.log(nextSibling)
+console.log(sibling)
