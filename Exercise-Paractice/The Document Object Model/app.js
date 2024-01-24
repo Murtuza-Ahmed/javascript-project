@@ -111,3 +111,12 @@ function getData(element) {
     let nameValue = element.getAttribute("data-name");
     pageMessage.innerHTML = "Row Index: " + rowIndex + ", Name: " + nameValue;
 }
+
+// EXERCISE 10.9
+let buttons = document.querySelectorAll("button");
+buttons.forEach((button) => {
+    function output() {
+        console.log(this.textContent);
+    }
+    button.addEventListener("click", output);
+});
