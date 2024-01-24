@@ -76,6 +76,38 @@ console.log(diCode);
 // console.log(liArray.textContent)
 
 // EXERCISE 10.4
-let classContent = document.getElementsByClassName("content");
-let selectClassContent = classContent[1];
-console.log(selectClassContent)
+// let classContent = document.getElementsByClassName("content");
+// let selectClassContent = classContent[1];
+// console.log(selectClassContent)
+
+// EXERCISE 10.7
+function message(element) {
+    console.dir(element);
+    console.log(element);
+}
+
+// EXERCISE 10.8
+let nameArray = ["murtuza", "hamza", "umer", "zubair", "raza", "ahmed", "mustufa", "sheroz"];
+let pageMessage = document.getElementById("message");
+let table = document.getElementById("html");
+function build() {
+    for (let i = 0; i <= nameArray.length; i++) {
+        let row = table.insertRow();
+        row.setAttribute("data-row", i);
+        row.setAttribute("data-name", nameArray[i]);
+        row.onclick = function () {
+            getData(this);
+        }
+        let cell = row.insertCell();
+        cell.innerHTML = nameArray[i];
+        // if (i % 2 === 0) {
+        //     cell.classList.add("box")
+        // }
+    }
+}
+build();
+function getData(element) {
+    let rowIndex = element.getAttribute("data-row");
+    let nameValue = element.getAttribute("data-name");
+    pageMessage.innerHTML = "Row Index: " + rowIndex + ", Name: " + nameValue;
+}
