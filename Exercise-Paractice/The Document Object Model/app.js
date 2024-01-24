@@ -55,13 +55,22 @@ console.log(diCode);
 // CHAPTER-(10) DYNAMIC ELEMENT MANIPULATION USING THE DOM
 
 // exercise 10.1
-console.dir(document);
-let bdyDocument = document.body.children;
-let first = bdyDocument[0]
-let nextSibling = first.nextElementSibling;
-let sibling = first.nextSibling;
-console.log(`BodyDocument: ${bdyDocument} \n BodyFirstDocument: ${first}\n BodyNextSibling: ${nextSibling}\n BodySibling: ${sibling}`);
-console.log(bdyDocument)
-console.log(first)
-console.log(nextSibling)
-console.log(sibling)
+// console.dir(document);
+// let bdyDocument = document.body.children;
+// let first = bdyDocument[0]
+// let nextSibling = first.nextElementSibling;
+// let sibling = first.nextSibling;
+// console.log(`BodyDocument: ${bdyDocument} \n BodyFirstDocument: ${first}\n BodyNextSibling: ${nextSibling}\n BodySibling: ${sibling}`);
+// console.log(bdyDocument)
+// console.log(first)
+// console.log(nextSibling)
+// console.log(sibling)
+
+// EXECISE 10.2
+// let one = document.getElementById("one");
+// console.log(one);
+
+// EXERCISE 10.3
+let pageElement = document.querySelectorAll("li")
+let liArray = pageElement[Math.floor(pageElement.length / 2)];
+console.log(liArray.textContent)
