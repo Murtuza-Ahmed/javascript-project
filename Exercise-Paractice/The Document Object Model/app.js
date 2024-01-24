@@ -71,6 +71,11 @@ console.log(diCode);
 // console.log(one);
 
 // EXERCISE 10.3
-let pageElement = document.querySelectorAll("li")
-let liArray = pageElement[Math.floor(pageElement.length / 2)];
-console.log(liArray.textContent)
+// let pageElement = document.querySelectorAll("li")
+// let liArray = pageElement[Math.floor(pageElement.length / 2)];
+// console.log(liArray.textContent)
+
+// EXERCISE 10.4
+let classContent = document.getElementsByClassName("content");
+let selectClassContent = classContent[1];
+console.log(selectClassContent)
