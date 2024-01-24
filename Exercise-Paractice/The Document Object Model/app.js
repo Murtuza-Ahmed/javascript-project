@@ -139,7 +139,7 @@ document.addEventListener("DOMContentLoaded", function () {
     };
 });
 
-// Chapter projects
+// Chapter projects     (Collapsible accordion component)
 let classTitle = document.querySelectorAll(".title");
 let classMyText = document.querySelectorAll(".myText");
 classTitle.forEach((classTitle) => {
@@ -156,3 +156,5 @@ function removeActiveClassFromAllElement() {
         classMyText.classList.remove("active");
     })
 }
+
+// (Interactive voting system)
