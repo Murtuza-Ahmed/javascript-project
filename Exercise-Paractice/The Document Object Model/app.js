@@ -158,3 +158,33 @@ function removeActiveClassFromAllElement() {
 }
 
 // (Interactive voting system)
+let myArray = [];
+let friend = document.getElementById("addFriend").value;
+console.log(friend)
+let add = document.getElementById("addNew");
+let outPut = document.getElementById("output");
+add.addEventListener("click", function () {
+    let addFriend = friend.value;
+    if (addFriend.trim() !== "") {
+        myArray.push(addFriend);
+        buildPageContent();
+        friend.value = "";
+    };
+});
+function buildPageContent() {
+    outPut.innerHTML = "";
+    myArray.forEach((name, index) => {
+        createTableRow(name, index)
+    });
+};
+function createTableRow(name, index) {
+    let tr = document.createElement("tr")
+    let tdName = document.createElement("td");
+    let tdIndex = document.createElement("td");
+    tdIndex.textContent = index + 1;
+    tdName.textContent = name;
+    tr.appendChild(tdIndex);
+    tr.appendChild(tdName);
+    outPut.appendChild(tr);
+};
+createTableRow();
