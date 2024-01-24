@@ -138,3 +138,21 @@ document.addEventListener("DOMContentLoaded", function () {
         };
     };
 });
+
+// Chapter projects
+let classTitle = document.querySelectorAll(".title");
+let classMyText = document.querySelectorAll(".myText");
+classTitle.forEach((classTitle) => {
+    classTitle.addEventListener("click", function () {
+        classTitle.classList.toggle("active");
+        removeActiveClassFromAllElement();
+    })
+})
+function removeActiveClassFromAllElement() {
+    classTitle.forEach((classTitle) => {
+        classTitle.classList.remove("active")
+    })
+    classMyText.forEach((classMyText) => {
+        classMyText.classList.remove("active");
+    })
+}
