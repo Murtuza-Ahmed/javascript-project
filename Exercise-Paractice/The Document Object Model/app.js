@@ -120,3 +120,21 @@ buttons.forEach((button) => {
     }
     button.addEventListener("click", output);
 });
+
+// EXERCISE 10.10
+document.addEventListener("DOMContentLoaded", function () {
+    let addItemIn = document.getElementById("addItem");
+    let addNewIn = document.getElementById("addNew");
+    let sListIn = document.getElementById("sList");
+    addNewIn.addEventListener("click", addListBtn);
+    function addListBtn() {
+        let inputValue = addItemIn.value;
+        if (inputValue !== "") {
+            let listIem = document.createElement("li");
+            let textNode = document.createTextNode(inputValue);
+            listIem.appendChild(textNode);
+            sListIn.appendChild(listIem)
+            addItemIn.value = "";
+        };
+    };
+});
