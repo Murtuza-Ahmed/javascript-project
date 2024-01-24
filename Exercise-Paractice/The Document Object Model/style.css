@@ -1,0 +1,13 @@
+/* CHAPTER PROJECT */
+.active {
+    display: block !important;
+}
+
+.title {
+    font-size: 1.5em;
+    background: #ddd;
+}
+
+.myText {
+    display: none;
+}
