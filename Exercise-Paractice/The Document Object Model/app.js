@@ -47,3 +47,10 @@ for (let i = 0; i <= divTagName.length; i++) {
     console.log(currentDiv)
 
 }
+
+
+
+
+
+// CHAPTER-(10) DYNAMIC ELEMENT MANIPULATION USING THE DOM
+
