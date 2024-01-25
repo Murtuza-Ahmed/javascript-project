@@ -66,3 +66,29 @@ element.addEventListener("mouseup", (event) => {
     handelEvent("blue", event);
     element.style.backgroundColor = "blue";
 });
+
+// exercise 11.5  The event target property
+// let output = document.querySelector(".output");
+// let input = document.querySelector("input[name='message']");
+// let btn1 = document.querySelector("btn1")
+// let btn2 = document.querySelector("btn2");
+// let btn3Log = document.querySelector("btn3");
+// let emptyArray = [];
+// function logEventDetail(event) {
+//     let logDetail = {
+//         value: input.value,
+//         type: event.type,
+//         className: event.target.className,
+//         tagName: event.target.tagName
+//     };
+//     emptyArray.push(logDetail);
+//     output.textContent = `InputValue: ${input.value}`;
+//     setTimeout(() => {
+//         output.textContent = "";
+//     }, 2000)
+// }
+// btn1.addEventListener("click", logEventDetail);
+// btn2.addEventListener("click", logEventDetail);
+// btn3Log.addEventListener("click", () => {
+//     console.log("EVENT_LOG" + emptyArray);
+// });
