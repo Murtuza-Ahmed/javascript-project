@@ -89,3 +89,19 @@ yle>.stars ul {
 .output {
     background-color: #ddd;
 }
+
+/* Mouse position tracker */
+.container {
+    width: 300px;
+    height: 200px;
+    border: 1px solid #ccc;
+    position: relative;
+}
+
+.active {
+    background-color: red;
+}
+
+#output {
+    margin-top: 10px;
+}

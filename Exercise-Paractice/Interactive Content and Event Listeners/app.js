@@ -302,3 +302,20 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 });
+
+// Mouse position tracker
+const container = document.getElementById('container');
+const output = document.getElementById('output');
+container.addEventListener('mouseover', () => {
+    container.classList.add('active');
+});
+container.addEventListener('mouseout', () => {
+    container.classList.remove('active');
+    output.innerText = '';
+});
+container.addEventListener('mousemove', (event) => {
+    const x = event.clientX - container.getBoundingClientRect().left;
+    const y = event.clientY - container.getBoundingClientRect().top;
+    const message = `Mouse position - X: ${x}px, Y: ${y}px`;
+    output.innerText = message;
+});
