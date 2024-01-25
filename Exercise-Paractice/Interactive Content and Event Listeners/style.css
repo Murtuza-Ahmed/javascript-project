@@ -1,0 +1,4 @@
+/* EXERCISE 11.1 */
+body {
+    transition: baclground-color 0.3s, color 0.3s;
+}
