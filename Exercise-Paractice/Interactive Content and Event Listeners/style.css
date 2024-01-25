@@ -2,3 +2,20 @@
 body {
     transition: baclground-color 0.3s, color 0.3s;
 }
+
+/* EXERCISE 11.2 */
+.body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+    margin: 0;
+}
+
+.colorDiv {
+    cursor: pointer;
+    padding: 1rem;
+    margin: 0.10rem;
+    border: 1px solid #000;
+    border-radius: 2rem;
+}
