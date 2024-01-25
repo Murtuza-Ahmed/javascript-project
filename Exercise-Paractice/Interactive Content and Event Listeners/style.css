@@ -19,3 +19,10 @@ body {
     border: 1px solid #000;
     border-radius: 2rem;
 }
+
+/* exercise 11.4 Mouse event handlers */
+.custom-element {
+    width: 200px;
+    height: 100px;
+    background-color: #CCC;
+}

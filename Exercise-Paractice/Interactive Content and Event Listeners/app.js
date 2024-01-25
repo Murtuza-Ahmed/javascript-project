@@ -40,3 +40,29 @@ function domContentLoadedHandler(event) {
     message("Document Ready", event);
 }
 document.addEventListener("DOMContentLoaded", domContentLoadedHandler);
+
+// exercise 11.4 Mouse event handlers
+let element = document.querySelector(".custom-element");
+element.textContent = "Hello World";
+element.style.width = "300px";
+element.style.height = "150px";
+function handelEvent(color, event) {
+    console.log("COLOR:" + color)
+    console.log("EVENT:" + event.type)
+}
+element.addEventListener("mousedown", (event) => {
+    handelEvent("green", event);
+    element.style.backgroundColor = "green";
+});
+element.addEventListener("mouseover", (event) => {
+    handelEvent("red", event);
+    element.style.backgroundColor = "red";
+});
+element.addEventListener("mouseout", (event) => {
+    handelEvent("yellow", event);
+    element.style.backgroundColor = "yellow";
+});
+element.addEventListener("mouseup", (event) => {
+    handelEvent("blue", event);
+    element.style.backgroundColor = "blue";
+});
