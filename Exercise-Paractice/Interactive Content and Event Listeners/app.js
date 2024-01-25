@@ -189,3 +189,30 @@ function dDrop() {
         event.target.appendChild(holderItem);
     }
 }
+
+// Form submission
+let q = window.location.search;
+let params = new URLSearchParams(q);
+let name = params.get("name");
+console.log(name);
+
+// Form submission
+function valForm() {
+    var p = event.target.children;
+    if (p.firstName.value === "") {
+        message("Need a first name!!");
+        return false;
+    }
+    if (p.lastName.value === "") {
+        message("Need a last name!!");
+        return false;
+    }
+    if (p.age.value === "") {
+        message("Need an age!!");
+        return false;
+    }
+    return true;
+}
+function message(m) {
+    document.getElementById("wrapper").innerHTML = m;
+}
