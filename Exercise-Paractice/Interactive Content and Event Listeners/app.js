@@ -101,3 +101,20 @@ let divs = document.getElementsByTagName("div");
 for (let i = 0; i < divs.length; i++) {
     divs[i].addEventListener("click", bubble);
 }
+
+// onchange and onblur
+function logEvent() {
+    let p = event.target;
+    if (p.name == "firstname") {
+        message("First Name Changed to " + p.value);
+    } else {
+        message("Last Name Changed to " + p.value);
+    }
+}
+function sendInfo() {
+    let p = event.target.parentElement;
+    message("Welcome " + p.firstname.value + " " + p.lastname.value)
+}
+function message(m) {
+    document.getElementById("welcome").innerHTML = m;
+}
