@@ -39,3 +39,17 @@ div {
     padding: 10px;
     border: 1px solid #CCC;
 }
+
+/* Drag and drop elements */
+.box {
+    height: 200px;
+    width: 200px;
+    padding: 20px;
+    margin: 0 50px;
+    display: inline-block;
+    border: 1px solid black;
+}
+
+#dragme {
+    background-color: red;
+}

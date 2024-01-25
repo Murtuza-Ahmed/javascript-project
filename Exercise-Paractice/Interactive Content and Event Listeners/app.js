@@ -174,3 +174,18 @@ document.addEventListener("DOMContentLoaded", function () {
         return !isNaN(parseFloat(key)) && isFinite(key)
     }
 });
+
+// Drag and drop elements
+let holderItem;
+function dStart() {
+    holderItem = event.target;
+}
+function nDrop() {
+    event.preventDefault();
+}
+function dDrop() {
+    event.preventDefault();
+    if (event.target.className == "box") {
+        event.target.appendChild(holderItem);
+    }
+}
