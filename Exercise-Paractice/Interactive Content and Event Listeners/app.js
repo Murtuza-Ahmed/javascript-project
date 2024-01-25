@@ -94,13 +94,13 @@ element.addEventListener("mouseup", (event) => {
 // });
 
 // DOM event flow
-function bubble() {
-    console.log(this.innerText);
-}
-let divs = document.getElementsByTagName("div");
-for (let i = 0; i < divs.length; i++) {
-    divs[i].addEventListener("click", bubble);
-}
+// function bubble() {
+//     console.log(this.innerText);
+// }
+// let divs = document.getElementsByTagName("div");
+// for (let i = 0; i < divs.length; i++) {
+//     divs[i].addEventListener("click", bubble);
+// }
 
 // onchange and onblur
 function logEvent() {
@@ -319,3 +319,47 @@ container.addEventListener('mousemove', (event) => {
     const message = `Mouse position - X: ${x}px, Y: ${y}px`;
     output.innerText = message;
 });
+
+// Box clicker speed test game
+const outputElement = document.querySelector('.output');
+const messageElement = document.querySelector('.message');
+const boxElement = document.createElement('div');
+boxElement.classList.add('box');
+outputElement.appendChild(boxElement);
+messageElement.textContent = 'Press to Start';
+const game = {
+    start: null,
+    timer: null,
+};
+function getRandom(max) {
+    return Math.floor(Math.random() * max);
+}
+boxElement.addEventListener('click', startGame);
+
+function startGame() {
+    if (game.start === null) {
+        messageElement.textContent = 'Loading...';
+    } else {
+        const currentTime = new Date().getTime();
+        const duration = (currentTime - game.start) / 1000;
+        messageElement.textContent = `Your Score: ${duration.toFixed(2)} seconds`;
+    }
+}
+function addBox() {
+    messageElement.textContent = 'Click it...';
+    game.start = new Date().getTime();
+    const maxX = outputElement.clientWidth - boxElement.clientWidth;
+    const maxY = outputElement.clientHeight - boxElement.clientHeight;
+    boxElement.style.left = `${getRandom(maxX)}px`;
+    boxElement.style.top = `${getRandom(maxY)}px`;
+    boxElement.style.display = 'block';
+    game.timer = setTimeout(() => {
+        boxElement.style.display = 'none';
+        addBox(); // Recursive call for the next box
+    }, getRandom(3000)); // Adjust the timeout as needed
+}
+function handleBoxClick() {
+    addBox();
+    boxElement.removeEventListener('click', handleBoxClick);
+}
+boxElement.addEventListener('click', handleBoxClick);

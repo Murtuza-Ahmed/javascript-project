@@ -34,21 +34,21 @@ div {
 }
 
 /* exercise 11.8 Key event handler */
-.outPut {
+/* .outPut {
     margin: 10px;
     padding: 10px;
     border: 1px solid #CCC;
-}
+} */
 
 /* Drag and drop elements */
-.box {
+/* .box {
     height: 200px;
     width: 200px;
     padding: 20px;
     margin: 0 50px;
     display: inline-block;
     border: 1px solid black;
-}
+} */
 
 #dragme {
     background-color: red;
@@ -86,9 +86,9 @@ yle>.stars ul {
     color: orange;
 }
 
-.output {
+/* .output {
     background-color: #ddd;
-}
+} */
 
 /* Mouse position tracker */
 .container {
@@ -104,4 +104,29 @@ yle>.stars ul {
 
 #output {
     margin-top: 10px;
+}
+
+/* Box clicker speed test game */
+.output {
+    width: 500px;
+    height: 500px;
+    border: 1px solid black;
+    margin: auto;
+    text-align: center;
+    position: relative;
+    /* Add relative positioning */
+}
+
+.box {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    /* Change to absolute positioning */
+    background-color: red;
+}
+
+.message {
+    text-align: center;
+    padding: 10px;
+    font-size: 1.3em;
 }
