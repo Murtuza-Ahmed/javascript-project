@@ -92,3 +92,12 @@ element.addEventListener("mouseup", (event) => {
 // btn3Log.addEventListener("click", () => {
 //     console.log("EVENT_LOG" + emptyArray);
 // });
+
+// DOM event flow
+function bubble() {
+    console.log(this.innerText);
+}
+let divs = document.getElementsByTagName("div");
+for (let i = 0; i < divs.length; i++) {
+    divs[i].addEventListener("click", bubble);
+}

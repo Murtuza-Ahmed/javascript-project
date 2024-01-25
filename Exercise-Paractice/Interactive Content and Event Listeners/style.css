@@ -26,3 +26,9 @@ body {
     height: 100px;
     background-color: #CCC;
 }
+
+/* DOM event flow */
+div {
+    border: 1px solid black;
+    margin-left: 5px;
+}
