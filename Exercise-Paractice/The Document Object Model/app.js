@@ -159,16 +159,16 @@ function removeActiveClassFromAllElement() {
 
 // (Interactive voting system)
 let myArray = [];
-let friend = document.getElementById("addFriend").value;
-console.log(friend)
+let friendInput = document.getElementById("addFriend");
+console.log(friendInput);
 let add = document.getElementById("addNew");
 let outPut = document.getElementById("output");
 add.addEventListener("click", function () {
-    let addFriend = friend.value;
+    let addFriend = friendInput.value;
     if (addFriend.trim() !== "") {
         myArray.push(addFriend);
+        friendInput.value = "";
         buildPageContent();
-        friend.value = "";
     };
 });
 function buildPageContent() {
