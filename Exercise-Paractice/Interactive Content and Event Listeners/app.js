@@ -261,3 +261,44 @@ document.addEventListener("DOMContentLoaded", function () {
         }, 100);
     });
 });
+
+// Chapter projects (Build your own analytics)
+document.addEventListener('DOMContentLoaded', function () {
+    var clickTrackingArray = [];
+    var mainContainer = document.getElementById('main-container');
+    mainContainer.addEventListener('click', function (event) {
+        var targetElement = event.target;
+        if (targetElement.id !== 'main-container') {
+            var trackingObject = {
+                textContent: targetElement.textContent,
+                id: targetElement.id,
+                tagName: targetElement.tagName,
+                className: targetElement.className,
+            };
+            clickTrackingArray.push(trackingObject);
+            console.log(clickTrackingArray);
+        }
+    });
+});
+
+// CHAPTER PROJECT  (Star rating system)
+document.addEventListener("DOMContentLoaded", function () {
+    const starsContainer = document.querySelector('.stars');
+    const outputElement = document.querySelector('.output');
+    const starElements = document.querySelectorAll('.star');
+    starElements.forEach((star, index) => {
+        star.starValue = index + 1;
+        star.addEventListener('click', starRate);
+    });
+    function starRate(event) {
+        const starValue = event.target.starValue;
+        outputElement.textContent = `You rated this ${starValue} out of 5 stars`;
+        starElements.forEach((star, index) => {
+            if (index < starValue) {
+                star.classList.add('orange');
+            } else {
+                star.classList.remove('orange');
+            }
+        });
+    }
+});

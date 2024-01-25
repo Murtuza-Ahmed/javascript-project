@@ -69,3 +69,23 @@ div {
     background-color: red;
     position: absolute;
 }
+
+/* Star rating system */
+yle>.stars ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.star {
+    font-size: 2em;
+    color: #ddd;
+    display: inline-block;
+}
+
+.orange {
+    color: orange;
+}
+
+.output {
+    background-color: #ddd;
+}
