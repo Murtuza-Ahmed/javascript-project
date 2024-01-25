@@ -216,3 +216,48 @@ function valForm() {
 function message(m) {
     document.getElementById("wrapper").innerHTML = m;
 }
+
+
+// Animating elements
+function toTheRight() {
+    let b = document.getElementById("block");
+    let x = 0;
+    setInterval(function () {
+        if (x === 600) {
+            clearInterval();
+        } else {
+            x++;
+            b.style.left = x + "px";
+        }
+    }, 2);
+
+}
+
+// exercise 11.11
+document.addEventListener("DOMContentLoaded", function () {
+    var element = document.getElementById("movingElement");
+    var movement = {
+        speed: 5,
+        direction: 1,
+        position: 0
+    };
+    element.addEventListener("click", function () {
+        var intervalCounter = 30;
+        var interval = setInterval(function () {
+            if (intervalCounter < 1) {
+                clearInterval(interval);
+            }
+            if (intervalCounter === 30) {
+                intervalCounter--;
+                return;
+            }
+            if (movement.position > 800 || movement.position < 0) {
+                movement.direction *= -1;
+            }
+            movement.position += movement.speed * movement.direction;
+            element.style.left = movement.position + "px";
+            console.log("Position:", movement.position);
+            intervalCounter--;
+        }, 100);
+    });
+});
