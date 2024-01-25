@@ -113,13 +113,13 @@ function getData(element) {
 }
 
 // EXERCISE 10.9
-let buttons = document.querySelectorAll("button");
-buttons.forEach((button) => {
-    function output() {
-        console.log(this.textContent);
-    }
-    button.addEventListener("click", output);
-});
+// let buttons = document.querySelectorAll("button");
+// buttons.forEach((button) => {
+//     function output() {
+//         console.log(this.textContent);
+//     }
+//     button.addEventListener("click", output);
+// });
 
 // EXERCISE 10.10
 document.addEventListener("DOMContentLoaded", function () {
@@ -158,33 +158,33 @@ function removeActiveClassFromAllElement() {
 }
 
 // (Interactive voting system)
-let myArray = [];
-let friendInput = document.getElementById("addFriend");
-console.log(friendInput);
-let add = document.getElementById("addNew");
-let outPut = document.getElementById("output");
-add.addEventListener("click", function () {
-    let addFriend = friendInput.value;
-    if (addFriend.trim() !== "") {
-        myArray.push(addFriend);
-        friendInput.value = "";
-        buildPageContent();
-    };
-});
-function buildPageContent() {
-    outPut.innerHTML = "";
-    myArray.forEach((name, index) => {
-        createTableRow(name, index)
-    });
-};
-function createTableRow(name, index) {
-    let tr = document.createElement("tr")
-    let tdName = document.createElement("td");
-    let tdIndex = document.createElement("td");
-    tdIndex.textContent = index + 1;
-    tdName.textContent = name;
-    tr.appendChild(tdIndex);
-    tr.appendChild(tdName);
-    outPut.appendChild(tr);
-};
-createTableRow();
+// let myArray = [];
+// let friendInput = document.getElementById("addFriend");
+// console.log(friendInput);
+// let add = document.getElementById("addNew");
+// let outPut = document.getElementById("output");
+// add.addEventListener("click", function () {
+//     let addFriend = friendInput.value;
+//     if (addFriend.trim() !== "") {
+//         myArray.push(addFriend);
+//         friendInput.value = "";
+//         buildPageContent();
+//     };
+// });
+// function buildPageContent() {
+//     outPut.innerHTML = "";
+//     myArray.forEach((name, index) => {
+//         createTableRow(name, index)
+//     });
+// };
+// function createTableRow(name, index) {
+//     let tr = document.createElement("tr")
+//     let tdName = document.createElement("td");
+//     let tdIndex = document.createElement("td");
+//     tdIndex.textContent = index + 1;
+//     tdName.textContent = name;
+//     tr.appendChild(tdIndex);
+//     tr.appendChild(tdName);
+//     outPut.appendChild(tr);
+// };
+// createTableRow();
