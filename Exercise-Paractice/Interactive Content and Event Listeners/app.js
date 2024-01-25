@@ -139,3 +139,38 @@ function eventHandel(event) {
 function updateOutput(content) {
     outputUpdate.textContent = content
 }
+
+// Key event handler
+function numCheck() {
+    message("Number: " + !isNaN(event.key));
+    return !isNaN(event.key);
+}
+function numCheck2() {
+    message("Not a number: " + isNaN(event.key));
+    return isNaN(event.key);
+}
+function message(m) {
+    document.getElementById('wrapper').innerHTML = m;
+}
+
+// exercise 11.8 Key event handler
+document.addEventListener("DOMContentLoaded", function () {
+    let output = document.querySelector(".outPut");
+    let inputField = document.querySelectorAll("input-field");
+    inputField.forEach((input) => {
+        input.addEventListener("keydown", (event) => {
+            if (isNumeric(event.key)) {
+                output.innerHTML += event.key;
+            }
+        });
+        input.addEventListener("keyup", (event) => {
+            console.log("Key Prased", event.key);
+        });
+        input.addEventListener("paste", () => {
+            console.log("paste dedacted");
+        });
+    });
+    function isNumeric(key) {
+        return !isNaN(parseFloat(key)) && isFinite(key)
+    }
+});

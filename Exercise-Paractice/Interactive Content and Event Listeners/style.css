@@ -32,3 +32,10 @@ div {
     border: 1px solid black;
     margin-left: 5px;
 }
+
+/* exercise 11.8 Key event handler */
+.outPut {
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #CCC;
+}
