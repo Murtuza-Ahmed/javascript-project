@@ -105,7 +105,7 @@ for (let i = 0; i < divs.length; i++) {
 // onchange and onblur
 function logEvent() {
     let p = event.target;
-    if (p.name == "firstname") {
+    if (p.name === "firstname") {
         message("First Name Changed to " + p.value);
     } else {
         message("Last Name Changed to " + p.value);
@@ -117,4 +117,25 @@ function sendInfo() {
 }
 function message(m) {
     document.getElementById("welcome").innerHTML = m;
+}
+
+// exercise 11.7  onchange and onblur
+let firstNameInput = document.querySelector("input[name='first']");
+let lastNameInput = document.querySelector("input[name='last']");
+let outputUpdate = document.querySelector("output1");
+firstNameInput.addEventListener("change", handelInputChange);
+lastNameInput.addEventListener("change", handelInputChange);
+firstNameInput.addEventListener("blur", eventHandel);
+firstNameInput.addEventListener("focus", eventHandel);
+lastNameInput.addEventListener("blur", eventHandel);
+lastNameInput.addEventListener("focus", eventHandel);
+function handelInputChange(event) {
+    let InputValue = event.target.value;
+    updateOutput(InputValue);
+}
+function eventHandel(event) {
+    console.log(`EventType: ${event.type} Value: ${event.target.value}`)
+}
+function updateOutput(content) {
+    outputUpdate.textContent = content
 }
