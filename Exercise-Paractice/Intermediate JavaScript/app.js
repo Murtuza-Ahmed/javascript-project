@@ -11,7 +11,6 @@ function lookUp() {
     let matches = s.match(regex);
     if (matches) {
         let updateText = s.replace(regex, rt);
-        console.log(updateText)
         outputElement.textContent = updateText
     }
 }
