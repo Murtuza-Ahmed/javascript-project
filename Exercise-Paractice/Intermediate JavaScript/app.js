@@ -1,7 +1,7 @@
 // exercise 12.1
 let outputElement = document.getElementById("output");
 let searchInput = document.getElementById("stext");
-let replaceInput = document.getAnimations("rtext");
+let replaceInput = document.getElementById("rtext");
 let button = document.querySelector("button");
 button.addEventListener("click", lookUp);
 function lookUp() {
