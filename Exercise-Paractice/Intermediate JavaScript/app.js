@@ -3,7 +3,8 @@ let outputElement = document.getElementById("output");
 let searchInput = document.getElementById("stext");
 let replaceInput = document.getAnimations("rtext");
 let button = document.querySelector("button");
-button.addEventListener("click", () => {
+button.addEventListener("click", lookUp);
+function lookUp() {
     let s = outputElement.textContent;
     let rt = replaceInput.value;
     let regex = new RegExp(searchInput, "g");
@@ -13,4 +14,4 @@ button.addEventListener("click", () => {
         console.log(updateText)
         outputElement.textContent = updateText
     }
-})
+}
