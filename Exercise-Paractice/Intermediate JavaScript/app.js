@@ -49,3 +49,19 @@ function adder() {
     }
     return counter;
 }
+
+// ERROR hANDLING   ESERCISE 12.5
+function checkNumber(val) {
+    try {
+        if (isNaN(val)) {
+            throw new Error("not a number")
+        } else {
+            console.log("got a number")
+        }
+    } catch (error) {
+        console.error(error.message)
+    } finally {
+        console.log("Value", val)
+    }
+}
+checkNumber("hello");
