@@ -65,3 +65,4 @@ function checkNumber(val) {
     }
 }
 checkNumber("hello");
+checkNumber(5);
