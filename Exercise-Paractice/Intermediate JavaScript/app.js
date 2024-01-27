@@ -66,3 +66,11 @@ function checkNumber(val) {
 }
 checkNumber("hello");
 checkNumber(5);
+
+// Local storage
+let message = "Hello Storage";
+localStorage.setItem("example", message);
+if (localStorage.getItem("example")) {
+    document.getElementById("stored").innerHTML =
+        localStorage.getItem("example");
+}
