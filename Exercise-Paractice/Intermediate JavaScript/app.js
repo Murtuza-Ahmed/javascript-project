@@ -22,7 +22,7 @@ let buttonCheck = document.querySelector("button");
 buttonCheck.addEventListener("click", () => {
     let inputEmail = inputElement.value;
     let respons = "";
-    let emailPattern = /([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9._-]+)/g;
+    let emailPattern = /^[\w\.-]+@[a-zA-Z\d\.-]+\.[a-zA-Z]{2,}$/g;
     let emailCheck = inputEmail.match(emailPattern);
     if (emailCheck) {
         respons = "Valid Email";
