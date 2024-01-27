@@ -76,6 +76,50 @@
 // }
 
 // EXERCISE 12.7
-let newItemValue = document.getElementsByTagName("input=value['new item']");
-let btn = document.getElementById("btnButton");
-let ul = document.querySelector(".outputUl");
+let newItemInput = document.getElementById("newItemInpur");
+let taskList = document.getElementById("taskList");
+let tasks = JSON.parse(localStorage.getItem("taskList")) || [];
+function builfTask(task) {
+    let listItem = document.createElement("li");
+    let textNode = document.createTextNode(task.name);
+    listItem.appendChild(textNode);
+    taskList.appendChild(listItem);
+    if (task.checked) {
+        listItem.classList.add("ready");
+    }
+    listItem.addEventListener("click", () => {
+        listItem.classList.toggle("ready");
+        task.checked = !task.checked;
+        saveTasks();
+    })
+}
+function buildTaskList() {
+    tasks = [];
+    let listItem = document.querySelectorAll("#tasklist li");
+    listItem.forEach((item) => {
+        let task = {
+            name: item.textContent,
+            checked: item.classList.contains("ready")
+        };
+        tasks.push(task);
+    });
+    saveTasks();
+}
+function saveTasks() {
+    localStorage.setItem("taskList", JSON.stringify(tasks));
+}
+tasks.forEach(buildTaskList);
+function addItem() {
+    let itemName = newItemInput.value.trim();
+    console.log(itemName)
+    if (itemName !== "") {
+        let newTask = {
+            name: itemName,
+            checked: false
+        };
+        tasks.push(newTask);
+        buildTaskList(newTask);
+        newItemInput.value = "";
+        saveTasks();
+    }
+}

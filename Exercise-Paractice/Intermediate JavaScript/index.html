@@ -27,7 +27,7 @@
     <div class="output"></div>
     <br>
     <input type="text" placeholder="Enter Email" id="email">
-    <button>Check</button>
+    <!-- <button>Check</button> -->
     <br>
     <br>
 
@@ -38,10 +38,10 @@
 
     <!-- EXERCISE 12.7 -->
     <div class="main">
-        <input placeholder="New Item" maxlength="10" value="test item">
-        <button>Add</button>
+        <input id="newItemInput" placeholder="Add Item" value="Text Item">
+        <button onclick="addItem()">Add</button>
     </div>
-    <ul class="outputUl"></ul>
+    <ul class="outputUl" id="taskListout"></ul>
 
 
 
