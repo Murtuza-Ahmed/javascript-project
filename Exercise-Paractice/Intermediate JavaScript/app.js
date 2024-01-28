@@ -76,57 +76,77 @@
 // }
 
 // EXERCISE 12.7
-// Qadam 1: Saare page elements ko JavaScript objects ke tor par select karein
-const newItemInput = document.getElementById("newItemInput");
-const taskList = document.getElementById("taskList");
-// Qadam 2: Tasks array ko local storage se hasil karein ya khali array ke tor par initialize karein
-let tasks = JSON.parse(localStorage.getItem('tasklist')) || [];
-// Qadam 3: Function banayein jo task item ko page mein shamil kare aur usay build kare
-function buildTask(task) {
-    const listItem = document.createElement("li");
-    const textNode = document.createTextNode(task.name);
-    listItem.appendChild(textNode);
-    taskList.appendChild(listItem);
-    if (task.checked) {
-        listItem.classList.add("ready");
+// // Qadam 1: Saare page elements ko JavaScript objects ke tor par select karein
+// const newItemInput = document.getElementById("newItemInput");
+// const taskList = document.getElementById("taskList");
+// // Qadam 2: Tasks array ko local storage se hasil karein ya khali array ke tor par initialize karein
+// let tasks = JSON.parse(localStorage.getItem('tasklist')) || [];
+// // Qadam 3: Function banayein jo task item ko page mein shamil kare aur usay build kare
+// function buildTask(task) {
+//     const listItem = document.createElement("li");
+//     const textNode = document.createTextNode(task.name);
+//     listItem.appendChild(textNode);
+//     taskList.appendChild(listItem);
+//     if (task.checked) {
+//         listItem.classList.add("ready");
+//     }
+//     // Qadam 5: Toggle event listener jodne ke liye, jo ready class ko badalay aur local storage ko update kare
+//     listItem.addEventListener("click", function () {
+//         listItem.classList.toggle("ready");
+//         task.checked = !task.checked;
+//         saveTasks();
+//     });
+// }
+// // Qadam 6: Visual data se task list array ko rebuild karne ke liye function banayein
+// function buildTaskList() {
+//     tasks = [];
+//     const listItems = document.querySelectorAll("#taskList li");
+//     listItems.forEach((item) => {
+//         const task = {
+//             name: item.textContent,
+//             checked: item.classList.contains("ready")
+//         };
+//         tasks.push(task);
+//     });
+//     saveTasks();
+// }
+// // Qadam 7: Local storage mein tasks array ko save karne ke liye function banayein
+// function saveTasks() {
+//     localStorage.setItem('tasklist', JSON.stringify(tasks));
+// }
+// // Qadam 8: Page load par mojood tasks ko display karein
+// tasks.forEach(buildTask);
+// // Qadam 4: Naya item task list mein shamil karne ke liye function banayein
+// function addItem() {
+//     const itemName = newItemInput.value.trim();
+//     if (itemName !== "") {
+//         const newTask = {
+//             name: itemName,
+//             checked: false
+//         };
+//         tasks.push(newTask);
+//         buildTask(newTask);
+//         newItemInput.value = "";
+//         saveTasks();
+//     }
+// }
+
+// JSON        EXERCISE 12.8
+let jsonObject = {
+    person1: {
+        name: "sheroz",
+        status: "active"
+    },
+    person2: {
+        name: "sheikh",
+        status: "Inactive"
     }
-    // Qadam 5: Toggle event listener jodne ke liye, jo ready class ko badalay aur local storage ko update kare
-    listItem.addEventListener("click", function () {
-        listItem.classList.toggle("ready");
-        task.checked = !task.checked;
-        saveTasks();
-    });
 }
-// Qadam 6: Visual data se task list array ko rebuild karne ke liye function banayein
-function buildTaskList() {
-    tasks = [];
-    const listItems = document.querySelectorAll("#taskList li");
-    listItems.forEach((item) => {
-        const task = {
-            name: item.textContent,
-            checked: item.classList.contains("ready")
-        };
-        tasks.push(task);
-    });
-    saveTasks();
-}
-// Qadam 7: Local storage mein tasks array ko save karne ke liye function banayein
-function saveTasks() {
-    localStorage.setItem('tasklist', JSON.stringify(tasks));
-}
-// Qadam 8: Page load par mojood tasks ko display karein
-tasks.forEach(buildTask);
-// Qadam 4: Naya item task list mein shamil karne ke liye function banayein
-function addItem() {
-    const itemName = newItemInput.value.trim();
-    if (itemName !== "") {
-        const newTask = {
-            name: itemName,
-            checked: false
-        };
-        tasks.push(newTask);
-        buildTask(newTask);
-        newItemInput.value = "";
-        saveTasks();
+function displayData(object) {
+    for (let key in object) {
+        if (object.hasOwnProperty(key)) {
+            console.log("Name" + object[key].name, "Status" + object[key].status)
+        }
     }
 }
+displayData(jsonObject);
