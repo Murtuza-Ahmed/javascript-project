@@ -152,6 +152,38 @@ function displayData(object) {
 displayData(jsonObject);
 
 // PARSING JSON
-let str = "{\"name\": \"Maaike\", \"age\": 30}";
-let convertJsonFile = JSON.parse(str);
+let name = "{\"name\":\"raza\", \"age\":20}";
+let convertJsonFile = JSON.parse(name);
 console.log(convertJsonFile)
+
+let myName = {
+    name: "sheroz",
+    age: 25
+}
+let convertObjStringiFy = JSON.stringify(myName);
+console.log(`TypeOf: ${typeof (convertObjStringiFy)} \n ${convertObjStringiFy}`);
+
+// EXERCISE 12.9
+let jsonFile = {
+    myName: {
+        firstName: "sheroz",
+        lastName: "sheikh",
+        age: 25,
+        weight: 50,
+        height: "7-inch"
+    },
+    play: {
+        game: "GTA",
+        favrateGame: "IGI",
+    },
+    hobbies: {
+        play1: "footBall",
+        play2: "snooker",
+        paly3: "basketBall"
+    }
+};
+let newStr = JSON.stringify(jsonFile);
+let newObj = JSON.parse(newStr);
+console.log(newObj)
+console.log(newStr)
+console.log(jsonFile)
