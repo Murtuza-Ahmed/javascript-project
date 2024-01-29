@@ -187,3 +187,24 @@ let newObj = JSON.parse(newStr);
 console.log(newObj)
 console.log(newStr)
 console.log(jsonFile)
+
+// Chapter projects   Email extractor
+let firstInput = document.getElementById("first");
+let secondInput = document.getElementById("second");
+let button = document.querySelector("button");
+button.addEventListener("click", () => {
+    let first = firstInput.value;
+    // let emailPattern = /\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b/g;
+    let emailCheck = first.match(/\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b/g);
+    let uniqeEmail = [];
+    emailCheck.forEach((email) => {
+        if (!uniqeEmail.includes(email)) {
+            uniqeEmail.push(email);
+        }
+    })
+    let result = uniqeEmail.join("\n")
+    // console.log(result)
+    secondInput.textContent = result;
+    localStorage.setItem("email", result);
+})
+document.getElementById("second").innerHTML = localStorage.getItem("email");
