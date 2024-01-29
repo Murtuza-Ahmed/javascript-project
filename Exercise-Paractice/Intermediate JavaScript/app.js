@@ -208,3 +208,43 @@ button.addEventListener("click", () => {
     localStorage.setItem("email", result);
 })
 document.getElementById("second").innerHTML = localStorage.getItem("email");
+
+// Form validator
+let hasError = false;
+let email = document.getElementById("email");
+let password = document.getElementById("password");
+let userName = document.getElementById("name");
+let emailError = document.querySelector(".error");
+let passwordError = document.querySelector(".error");
+let userNameError = document.querySelector(".error");
+document.querySelector(".myform").addEventListener("submit", (event) => {
+    event.preventDefault();
+    let errorElement = document.querySelectorAll(".error");
+    errorElement.forEach((element) => {
+        element.classList.add(".hide");
+    });
+    let emailRegex = /\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b/g;
+    if (!emailRegex.test(email.value)) {
+        handelErrors(email)
+    };
+    let passwordRegex = /^[a-zA-Z0-9]+$/;
+    if (password.lenght < 3 || password.lenght > 8 || !passwordRegex.test(password.value)) {
+        handelErrors(password, "password should be 3-8 characters long and contain only letters and numbers.");
+    }
+    let dataForm = {};
+    let allInputField = document.querySelectorAll(".input");
+    allInputField.forEach((element) => {
+        dataForm[element.name] = element.value;
+    });
+    if (!hasError) {
+        alert("Form submitted successfully!");
+    } else {
+        alert("Form submission failed due to errors.");
+    }
+});
+function handelErrors(element, message) {
+    element.nextElementSibling.classList.remove(".hide");
+    element.nextElementSibling.textContent = message || "invalid input";
+    element.focus();
+    hasError = true;
+};

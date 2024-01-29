@@ -4,3 +4,22 @@
     color: #FF0000;
     text-decoration: line-through;
 }
+
+/* Form validator */
+.hide {
+    display: none;
+}
+
+.error {
+    color: #FF0000;
+    font-size: 0.10rem;
+    font-family: sans-serif;
+    font-style: italic;
+}
+
+input {
+    border-color: #DDD;
+    width: 400px;
+    display: block;
+    font-size: 1rem;
+}
