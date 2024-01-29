@@ -151,11 +151,7 @@ function displayData(object) {
 }
 displayData(jsonObject);
 
-// PARACTICE
-// let person3 = {
-//     name: "raza",
-//     status: "super"
-// }
+// PARSING JSON
 let str = "{\"name\": \"Maaike\", \"age\": 30}";
 let convertJsonFile = JSON.parse(str);
 console.log(convertJsonFile)
