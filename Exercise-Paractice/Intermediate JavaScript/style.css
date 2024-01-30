@@ -17,7 +17,7 @@
     font-style: italic;
 }
 
-input {
+.input {
     border-color: #DDD;
     width: 400px;
     display: block;

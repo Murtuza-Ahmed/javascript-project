@@ -188,64 +188,102 @@ console.log(newObj)
 console.log(newStr)
 console.log(jsonFile)
 
-// Chapter projects   Email extractor
-let firstInput = document.getElementById("first");
-let secondInput = document.getElementById("second");
-let button = document.querySelector("button");
-button.addEventListener("click", () => {
-    let first = firstInput.value;
-    // let emailPattern = /\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b/g;
-    let emailCheck = first.match(/\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b/g);
-    let uniqeEmail = [];
-    emailCheck.forEach((email) => {
-        if (!uniqeEmail.includes(email)) {
-            uniqeEmail.push(email);
-        }
-    })
-    let result = uniqeEmail.join("\n")
-    // console.log(result)
-    secondInput.textContent = result;
-    localStorage.setItem("email", result);
-})
-document.getElementById("second").innerHTML = localStorage.getItem("email");
+// // Chapter projects   Email extractor
+// let firstInput = document.getElementById("first");
+// let secondInput = document.getElementById("second");
+// let button = document.querySelector("button");
+// button.addEventListener("click", () => {
+//     let first = firstInput.value;
+//     // let emailPattern = /\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b/g;
+//     let emailCheck = first.match(/\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b/g);
+//     let uniqeEmail = [];
+//     emailCheck.forEach((email) => {
+//         if (!uniqeEmail.includes(email)) {
+//             uniqeEmail.push(email);
+//         }
+//     })
+//     let result = uniqeEmail.join("\n")
+//     // console.log(result)
+//     secondInput.textContent = result;
+//     localStorage.setItem("email", result);
+// })
+// document.getElementById("second").innerHTML = localStorage.getItem("email");
 
-// Form validator
-let hasError = false;
-let email = document.getElementById("email");
-let password = document.getElementById("password");
-let userName = document.getElementById("name");
-let emailError = document.querySelector(".error");
-let passwordError = document.querySelector(".error");
-let userNameError = document.querySelector(".error");
-document.querySelector(".myform").addEventListener("submit", (event) => {
-    event.preventDefault();
-    let errorElement = document.querySelectorAll(".error");
-    errorElement.forEach((element) => {
-        element.classList.add(".hide");
-    });
-    let emailRegex = /\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b/g;
-    if (!emailRegex.test(email.value)) {
-        handelErrors(email)
-    };
-    let passwordRegex = /^[a-zA-Z0-9]+$/;
-    if (password.lenght < 3 || password.lenght > 8 || !passwordRegex.test(password.value)) {
-        handelErrors(password, "password should be 3-8 characters long and contain only letters and numbers.");
+// // Form validator
+// let hasError = false;
+// let email = document.getElementById("email");
+// let password = document.getElementById("password");
+// let userName = document.getElementById("name");
+// let emailError = document.querySelector(".error");
+// let passwordError = document.querySelector(".error");
+// let userNameError = document.querySelector(".error");
+// document.querySelector(".myform").addEventListener("submit", (event) => {
+//     event.preventDefault();
+//     let errorElement = document.querySelectorAll(".error");
+//     errorElement.forEach((element) => {
+//         element.classList.add(".hide");
+//     });
+//     let emailRegex = /\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b/g;
+//     if (!emailRegex.test(email.value)) {
+//         handelErrors(email)
+//     };
+//     let passwordRegex = /^[a-zA-Z0-9]+$/;
+//     if (password.lenght < 3 || password.lenght > 8 || !passwordRegex.test(password.value)) {
+//         handelErrors(password, "password should be 3-8 characters long and contain only letters and numbers.");
+//     }
+//     let dataForm = {};
+//     let allInputField = document.querySelectorAll(".input");
+//     allInputField.forEach((element) => {
+//         dataForm[element.name] = element.value;
+//     });
+//     if (!hasError) {
+//         alert("Form submitted successfully!");
+//     } else {
+//         alert("Form submission failed due to errors.");
+//     }
+// });
+// function handelErrors(element, message) {
+//     // console.log(element)
+//     element.nextElementSibling.classList.remove(".hide");
+//     element.nextElementSibling.textContent = message || "invalid input";
+//     element.focus();
+//     hasError = true;
+// };
+
+// Simple math quiz
+function app() {
+    const val1Element = document.querySelector('.val1');
+    const val2Element = document.querySelector('.val2');
+    const answerInput = document.getElementById('answer');
+    const checkButton = document.querySelector('button');
+    const outputElement = document.querySelector('.output');
+    const game = {};
+    // console.log(game)
+    document.addEventListener('DOMContentLoaded', init);
+    function init() {
+        checkButton.addEventListener('click', checker);
+        loadQuestion();
     }
-    let dataForm = {};
-    let allInputField = document.querySelectorAll(".input");
-    allInputField.forEach((element) => {
-        dataForm[element.name] = element.value;
-    });
-    if (!hasError) {
-        alert("Form submitted successfully!");
-    } else {
-        alert("Form submission failed due to errors.");
+    function loadQuestion() {
+        game.val1 = Math.floor(Math.random() * 10) + 1;
+        // console.log(game.val1)
+        game.val2 = Math.floor(Math.random() * 10) + 1;
+        game.result = game.val1 + game.val2;
+        val1Element.textContent = game.val1;
+        val2Element.textContent = '+';
+        answerInput.value = '';
+        outputElement.textContent = '';
     }
-});
-function handelErrors(element, message) {
-    // console.log(element)
-    element.nextElementSibling.classList.remove(".hide");
-    element.nextElementSibling.textContent = message || "invalid input";
-    element.focus();
-    hasError = true;
-};
+    function checker() {
+        const userAnswer = parseInt(answerInput.value);
+        const isCorrect = userAnswer === game.result;
+        const color = isCorrect % 2 === 0 ? 'green' : 'red';
+        // console.log(color)
+        const resultElement = document.createElement('div');
+        resultElement.style.color = color;
+        resultElement.textContent = `${game.val1} + ${game.val2} = ${game.result} [Your Answer: ${userAnswer}]`;
+        outputElement.appendChild(resultElement);
+        loadQuestion();
+    }
+}
+app();
