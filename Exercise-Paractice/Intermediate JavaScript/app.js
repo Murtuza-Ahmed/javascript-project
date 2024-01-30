@@ -243,6 +243,7 @@ document.querySelector(".myform").addEventListener("submit", (event) => {
     }
 });
 function handelErrors(element, message) {
+    // console.log(element)
     element.nextElementSibling.classList.remove(".hide");
     element.nextElementSibling.textContent = message || "invalid input";
     element.focus();
