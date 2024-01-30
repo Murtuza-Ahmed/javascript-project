@@ -43,3 +43,25 @@ startCountingPromises
     .catch((error) => {
         console.error("ERROR: ", error)
     })
+
+// async and await  exercise 13.3
+let globalCounter = 0;
+function timeOutFunction(value) {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            globalCounter += 1;
+            resolve({ counter: globalCounter, argumentValue: value })
+        }, 1000);
+    });
+}
+async function asyncFunction() {
+    let result = await timeOutFunction(arguments);
+    console.log("GlobalCounter", result.counter);
+    console.log("ArgumentValue", result.argumentValue);
+    return result;
+}
+for (let i = 1; i <= 10; i++) {
+    asyncFunction(i).then((result) => {
+        console.log("Result From Await", result);
+    });
+}
