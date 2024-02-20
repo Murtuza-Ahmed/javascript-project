@@ -159,3 +159,10 @@ for (let i = 1; i <= valueNum; i++) {
     multiplicationArray.push(rowArray);
 }
 console.table(multiplicationArray);
+
+// REDUCE
+// let arrayReduce = [1, 2, 3, 6, 8];
+// let answer = arrayReduce.reduce((accumulator, currentValue) => {
+//     return accumulator + currentValue
+// }, 0)
+// console.log(answer)
